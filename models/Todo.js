@@ -10,7 +10,7 @@ const mongoose = require('../db/connection');
 
 const TodoListSchema = new mongoose.Schema({
     // NewComponents: [NewComponentsSchema]
-    item: String,
+    text: String,
 });
 
 const Todo = mongoose.model("TodoList", TodoListSchema);
