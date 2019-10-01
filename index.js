@@ -4,7 +4,7 @@ const parser = require('body-parser');
 const cors = require('cors');
 
 // Requiring controllers
-const toDoRoutes = require('./db/routes/todo');
+// const toDoRoutes = require('./db/routes/todo');
 const toWatchRoutes = require('./db/routes/towatch');
 const toReadRoutes = require('./db/routes/toread');
 
@@ -14,7 +14,7 @@ app.use(parser.json());
 app.use(cors());
 
 // Instantiating controllers
-app.use('/todo/', toDoRoutes)
+// app.use('/todo/', toDoRoutes)
 app.use('/towatch/', toWatchRoutes);
 app.use('/toread/', toReadRoutes);
 

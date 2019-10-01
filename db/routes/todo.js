@@ -1,14 +1,14 @@
-const express = require('express');
-const todoRouter = express.Router();
+// const express = require('express');
+// const todoRouter = express.Router();
 
-const todoController = require("../controllers/todo")
+// const todoController = require("../controllers/todo")
 
-todoRouter.get("/", todoController.index);
-todoRouter.get("/:name", todoController.name);
-todoRouter.get("/:id", todoController.id);
-todoRouter.post("/", todoController.newTodo);
-todoRouter.put("/:id", todoController.update);
-todoRouter.delete("/:id", todoController.delete);
+// todoRouter.get("/", todoController.index);
+// todoRouter.get("/:name", todoController.name);
+// todoRouter.get("/:id", todoController.id);
+// todoRouter.post("/", todoController.newTodo);
+// todoRouter.put("/:id", todoController.update);
+// todoRouter.delete("/:id", todoController.delete);
 
 
-module.exports = todoRouter;
+// module.exports = todoRouter;

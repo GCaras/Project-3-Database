@@ -18,6 +18,5 @@ mongoose.connect('mongodb://localhost/to-do-list', { useNewUrlParser: true })
 	console.error(err)
 })
 
-  
 
 module.exports = mongoose
