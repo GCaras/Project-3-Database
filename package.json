@@ -1,5 +1,5 @@
 {
-  "name": "A customizable dashboard aggregator",
+  "name": "customizable_dashboard_aggregator",
   "version": "1.0.0",
   "description": "Express / Node API",
   "main": "index.js",
@@ -11,5 +11,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.5.4"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }

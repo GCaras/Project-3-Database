@@ -2,6 +2,14 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = Promise
 
+let mongoURI = "";
+
+if (process.env.NODE_ENV === "production") {
+	mongoURI = process.env.DB_URL;
+  } else {
+	mongoURI = "mongodb://localhost/to-do-list";
+  }
+
 mongoose.connect('mongodb://localhost/to-do-list', { useNewUrlParser: true })
 .then((conn) => {
 	console.log(`connected to mongodb on ${conn.connections[0].name} db`)
