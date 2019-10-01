@@ -4,9 +4,9 @@ const parser = require('body-parser');
 const cors = require('cors');
 
 // Requiring controllers
-const toDoRoutes = require('./routes/todo');
-const toWatchRoutes = require('./routes/towatch');
-const toReadRoutes = require('./routes/toread');
+const toDoRoutes = require('./db/routes/todo');
+const toWatchRoutes = require('./db/routes/towatch');
+const toReadRoutes = require('./db/routes/toread');
 
 // The coded needed to make body-parser work.
 app.use(parser.urlencoded({extended: true}))

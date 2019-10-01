@@ -1,5 +1,5 @@
 // Require connection file and save to mongoose.
-const mongoose = require('../db/connection');
+const mongoose = require('../connection');
 
 const ToDoSchema = new mongoose.Schema({
     task: String,
