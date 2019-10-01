@@ -7,7 +7,6 @@ const cors = require('cors');
 const toDoRoutes = require('./routes/todo');
 const toWatchRoutes = require('./routes/towatch');
 const toReadRoutes = require('./routes/toread');
-// const showRoutes = require('./routes/show');
 
 // The coded needed to make body-parser work.
 app.use(parser.urlencoded({extended: true}))
