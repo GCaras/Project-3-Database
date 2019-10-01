@@ -8,6 +8,6 @@ const ToDoSchema = new mongoose.Schema({
     image: String
 });
 
-const ToDo = mongoose.model("TodoList", ToDoSchema);
+const ToDo = mongoose.model("ToDoList", ToDoSchema);
 
 module.exports = ToDo;
