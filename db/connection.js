@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "production") {
 	mongoURI = "mongodb://localhost/to-do-list";
   }
 
-mongoose.connect(mongURI, { useNewUrlParser: true })
+mongoose.connect(mongoURI, { useNewUrlParser: true })
 .then((conn) => {
 	console.log(`connected to mongodb on ${conn.connections[0].name} db`)
 })
