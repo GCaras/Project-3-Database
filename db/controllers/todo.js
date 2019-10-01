@@ -3,7 +3,9 @@ const Todo = require("../models/ToDo.js");
 module.exports = {
     index: (req, res) => {
         //Return all people
-        Todo.find({}).then(output => res.json(output))
+        Todo.find({})
+        .sort({due: "ascending"})
+        .then(output => res.json(output))
     },
     name: (req, res) => {
         //Return Todo by name
