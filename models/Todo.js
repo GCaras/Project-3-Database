@@ -1,13 +1,13 @@
 // Require connection file and save to mongoose.
 const mongoose = require('../db/connection');
 
-const TodoSchema = new mongoose.Schema({
+const ToDoSchema = new mongoose.Schema({
     task: String,
     due: Date,
     url: String,
     image: String
 });
 
-const Todo = mongoose.model("TodoList", TodoSchema);
+const ToDo = mongoose.model("TodoList", ToDoSchema);
 
-module.exports = Todo;
+module.exports = ToDo;
