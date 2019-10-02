@@ -2,11 +2,8 @@
 const mongoose = require('../connection');
 
 const ToWatchSchema = new mongoose.Schema({
-    title: String,
-    service: String,
-    due: Date,
-    url: String,
-    image: String
+    Title: String,
+    Poster: String,
 });
 
 const ToWatch = mongoose.model("ToWatchList", ToWatchSchema);

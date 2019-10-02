@@ -1,4 +1,4 @@
-const ToWatch = require("../models/ToRead");
+const ToWatch = require("../models/ToWatch");
 
 module.exports = {
     index: (req, res) => {
