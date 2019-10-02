@@ -3,7 +3,7 @@ const Todo = require("../models/ToDo.js");
 module.exports = {
     index: (req, res) => {
         //Return all people
-        Todo.find({})
+        Todo.find({ due: "019-10-05T12:00:00.000Z" })
         .sort({due: "ascending"})
         .then(output => res.json(output))
     },

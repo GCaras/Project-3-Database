@@ -7,6 +7,7 @@ const cors = require('cors');
 const toDoRoutes = require('./db/routes/todo');
 const toWatchRoutes = require('./db/routes/towatch');
 const toReadRoutes = require('./db/routes/toread');
+const indexRoutes = require('./db/routes/index');
 
 // The coded needed to make body-parser work.
 app.use(parser.urlencoded({extended: true}))
@@ -17,6 +18,7 @@ app.use(cors());
 app.use('/todo/', toDoRoutes)
 app.use('/towatch/', toWatchRoutes);
 app.use('/toread/', toReadRoutes);
+app.use('/index/', indexRoutes)
 
 app.set("port", process.env.PORT || 8081);
 
