@@ -10,13 +10,9 @@ module.exports = {
 
         // Receiving substring splicing off the Zulu time
         let dateAndTime = req.params.dt
-        // let dateAndTime = dateAndTimeObj["dateAndTime"]
         console.log(dateAndTime)
 
-        // let dateAndTime = parseInt('2019-10-02', 10)
         let Array1 = []
-        let Array2 = []
-        let Array3 = []
         let ArrayResult = []
 
         ToWatch.find({ due: {
@@ -38,13 +34,9 @@ module.exports = {
         } })
         .then(result => Array1.push(result))
         .then(() => ArrayResult = [Array1])
-        // .then(() => Array1.concat(Array3)) 
-        // .then(result => console.log(result))
         .then(result => ArrayResult = result.flat([2]) )
         .then(() => res.json(ArrayResult))
 
         
     }
 }
-
-// setTimeout(() => console.log(Array1))
