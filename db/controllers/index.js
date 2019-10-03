@@ -2,37 +2,49 @@ const ToDo = require("../models/ToDo");
 const ToWatch = require("../models/ToWatch");
 const ToRead = require("../models/ToRead");
 
+
+
+
 module.exports = {
     index: (req, res) => {
-        //Return all events - check monarch lab
-        ToWatch.find({})
-            .populate(populateQuery)
-            // .execPopulate()
-            .then(result => res.json(result))
+
+        // Receiving substring splicing off the Zulu time
+        let dateAndTime = req.params.dt
+        // let dateAndTime = dateAndTimeObj["dateAndTime"]
+        console.log(dateAndTime)
+
+        // let dateAndTime = parseInt('2019-10-02', 10)
+        let Array1 = []
+        let Array2 = []
+        let Array3 = []
+        let ArrayResult = []
+
+        ToWatch.find({ due: {
+            
+            $gte: new Date(`${dateAndTime}T00:00:00Z`),
+            $lte: new Date(`${dateAndTime}T24:00:00Z`)
+        } })
+        .then(result => Array1.push(result))
+
+        ToDo.find({ due: {
+            $gte: new Date(`${dateAndTime}T00:00:00Z`),
+            $lte: new Date(`${dateAndTime}T24:00:00Z`)
+        } })
+        .then(result => Array1.push(result))
+
+        ToRead.find({ due: {
+            $gte: new Date(`${dateAndTime}T00:00:00Z`),
+            $lte: new Date(`${dateAndTime}T24:00:00Z`)
+        } })
+        .then(result => Array1.push(result))
+        .then(() => ArrayResult = [Array1])
+        // .then(() => Array1.concat(Array3)) 
+        // .then(result => console.log(result))
+        .then(result => ArrayResult = result.flat([2]) )
+        .then(() => res.json(ArrayResult))
+
         
-        
-        .find({})
-        .sort({due: "ascending"})
-        .then(output => res.json(output))
     }
 }
 
-
-// Use Mongo 
-
-// Retrieve
-// var MongoClient = require('mongodb').MongoClient;
-
-// // Connect to the db
-// MongoClient.connect("mongodb://localhost:27017/exampleDb", function(err, db) {
-//   if(err) { return console.dir(err); }
-
-//   db.collection('test', function(err, collection) {});
-
-//   db.collection('test', {w:1}, function(err, collection) {});
-
-//   db.createCollection('test', function(err, collection) {});
-
-//   db.createCollection('test', {w:1}, function(err, collection) {});
-
-// });
+// setTimeout(() => console.log(Array1))

@@ -5,7 +5,6 @@ const ToDoSchema = new mongoose.Schema({
     due: Date,
     url: String,
     type: String
-    // image: String
 });
 
 const ToDo = mongoose.model("ToDoList", ToDoSchema);
