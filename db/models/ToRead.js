@@ -5,7 +5,9 @@ const ToReadSchema = new mongoose.Schema({
     description: String,
     thumbnail: String,
     title: String,
-
+    type: String
+    
+    // Raw data structure below
     // volumeInfo: {
     //     title: String,
     //     authors: Array,

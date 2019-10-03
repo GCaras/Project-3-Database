@@ -6,6 +6,7 @@ const ToWatchSchema = new mongoose.Schema({
     Poster: String,
     due: Date,
     description: String,
+    type: String
 });
 
 const ToWatch = mongoose.model("ToWatchList", ToWatchSchema);

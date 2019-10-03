@@ -4,6 +4,7 @@ const ToDoSchema = new mongoose.Schema({
     description: String,
     due: Date,
     url: String,
+    type: String
     // image: String
 });
 
