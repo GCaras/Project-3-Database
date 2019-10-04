@@ -23,7 +23,7 @@ module.exports = {
     update: (req, res) => {
         //Modify Todo by _id search
         const requestBody = req.body;
-        Todo.findOneAndUpdate({ "_id": req.params.id }, { requestBody }, { new: true })
+        Todo.findOneAndUpdate({ "_id": req.params.id }, requestBody, { new: true })
         .then(output => res.json(output))
     },
     delete: (req, res) => {
