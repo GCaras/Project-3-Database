@@ -1,7 +1,7 @@
 const mongoose = require('../connection');
 
 const ToDoSchema = new mongoose.Schema({
-    description: String,
+    taskItem: String,
     due: Date,
     url: String,
     type: String
