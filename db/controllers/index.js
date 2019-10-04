@@ -36,7 +36,5 @@ module.exports = {
         .then(() => ArrayResult = [Array1])
         .then(result => ArrayResult = result.flat([2]) )
         .then(() => res.json(ArrayResult))
-
-        
     }
 }
